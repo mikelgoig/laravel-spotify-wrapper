@@ -8,6 +8,7 @@
     ],
     "homepage": "https://github.com/mgoigfer/laravel-spotify-web-api",
     "license": "MIT",
+    "type": "package",
     "authors": [
         {
             "name": "Mikel Goig",
@@ -26,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Mgoigfer\\SpotifyWebApi\\": "src"
+            "Mgoigfer\\Spotify\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mgoigfer\\SpotifyWebApi\\Tests\\": "tests"
+            "Mgoigfer\\Spotify\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -39,17 +40,16 @@
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
 
     },
-    "config": {
-        "sort-packages": true
-    },
     "extra": {
         "laravel": {
             "providers": [
-                "Mgoigfer\\SpotifyWebApi\\SpotifyWebApiServiceProvider"
-            ],
-            "aliases": {
-                "SpotifyWebApi": "Mgoigfer\\SpotifyWebApi\\SpotifyWebApiFacade"
-            }
+                "Mgoigfer\\Spotify\\SpotifyServiceProvider"
+            ]
         }
-    }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

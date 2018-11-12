@@ -18,7 +18,7 @@ composer require mgoigfer/laravel-spotify-web-api
 ## Usage
 
 ``` php
-$spotify = new Mgoigfer\SpotifyWebApi();
+$spotify = new Mgoigfer\Spotify();
 ```
 
 ### Testing
