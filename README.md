@@ -35,10 +35,6 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-### Security
-
-If you discover any security related issues, please email m@mikelgoig.com instead of using the issue tracker.
-
 ## Credits
 
 - [Mikel Goig](https://github.com/mgoigfer)
