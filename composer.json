@@ -1,0 +1,55 @@
+{
+    "name": "mgoigfer/laravel-spotify-web-api",
+    "description": "A Laravel wrapper for Spotify's Web API. ",
+    "keywords": [
+        "laravel",
+        "php",
+        "spotify"
+    ],
+    "homepage": "https://github.com/mgoigfer/laravel-spotify-web-api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mikel Goig",
+            "email": "m@mikelgoig.com",
+            "homepage": "https://mikelgoig.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "jwilsson/spotify-web-api-php": "^2.6"
+    },
+    "require-dev": {
+        "larapack/dd": "^1.0",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mgoigfer\\SpotifyWebApi\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mgoigfer\\SpotifyWebApi\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mgoigfer\\SpotifyWebApi\\SpotifyWebApiServiceProvider"
+            ],
+            "aliases": {
+                "SpotifyWebApi": "Mgoigfer\\SpotifyWebApi\\SpotifyWebApiFacade"
+            }
+        }
+    }
+}
