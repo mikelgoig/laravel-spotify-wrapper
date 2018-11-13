@@ -1,9 +1,9 @@
-# Laravel Spotify Web API
+# PHP Spotify Wrapper
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/mgoigfer/laravel-spotify-web-api.svg?style=flat-square)](https://packagist.org/packages/mgoigfer/laravel-spotify-web-api)
-[![Build Status](https://img.shields.io/travis/mgoigfer/laravel-spotify-web-api/master.svg?style=flat-square)](https://travis-ci.org/mgoigfer/laravel-spotify-web-api)
-[![Quality Score](https://img.shields.io/scrutinizer/g/mgoigfer/laravel-spotify-web-api.svg?style=flat-square)](https://scrutinizer-ci.com/g/mgoigfer/laravel-spotify-web-api)
-[![Total Downloads](https://img.shields.io/packagist/dt/mgoigfer/laravel-spotify-web-api.svg?style=flat-square)](https://packagist.org/packages/mgoigfer/laravel-spotify-web-api)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/mgoigfer/laravel-spotify-wrapper.svg?style=flat-square)](https://packagist.org/packages/mgoigfer/laravel-spotify-wrapper)
+[![Build Status](https://img.shields.io/travis/mgoigfer/laravel-spotify-wrapper/master.svg?style=flat-square)](https://travis-ci.org/mgoigfer/laravel-spotify-wrapper)
+[![Quality Score](https://img.shields.io/scrutinizer/g/mgoigfer/laravel-spotify-wrapper.svg?style=flat-square)](https://scrutinizer-ci.com/g/mgoigfer/laravel-spotify-wrapper)
+[![Total Downloads](https://img.shields.io/packagist/dt/mgoigfer/laravel-spotify-wrapper.svg?style=flat-square)](https://packagist.org/packages/mgoigfer/laravel-spotify-wrapper)
 
 This is where your description should go. Try and limit it to a paragraph or two.
 
@@ -12,13 +12,13 @@ This is where your description should go. Try and limit it to a paragraph or two
 You can install the package via Composer:
 
 ```bash
-composer require mgoigfer/laravel-spotify-web-api
+composer require mgoigfer/spotify-wrapper
 ```
 
 ## Usage
 
 ``` php
-$spotify = new Mgoigfer\Spotify();
+$spotify = new Mgoigfer\SpotifyWrapper();
 ```
 
 ### Testing

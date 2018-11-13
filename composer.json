@@ -1,12 +1,11 @@
 {
-    "name": "mgoigfer/laravel-spotify-web-api",
-    "description": "A Laravel wrapper for Spotify's Web API. ",
+    "name": "mgoigfer/laravel-spotify-wrapper",
+    "description": "A PHP wrapper for Spotify's Web API. ",
     "keywords": [
-        "laravel",
-        "php",
-        "spotify"
+        "spotify",
+        "php"
     ],
-    "homepage": "https://github.com/mgoigfer/laravel-spotify-web-api",
+    "homepage": "https://github.com/mgoigfer/laravel-spotify-wrapper",
     "license": "MIT",
     "type": "package",
     "authors": [
@@ -27,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Mgoigfer\\Spotify\\": "src"
+            "Mgoigfer\\SpotifyWrapper\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mgoigfer\\Spotify\\Tests\\": "tests"
+            "Mgoigfer\\SpotifyWrapper\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -43,7 +42,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mgoigfer\\Spotify\\SpotifyServiceProvider"
+                "Mgoigfer\\SpotifyWrapper\\SpotifyWraperServiceProvider"
             ]
         }
     },

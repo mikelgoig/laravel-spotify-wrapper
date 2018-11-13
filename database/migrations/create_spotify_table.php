@@ -13,7 +13,7 @@ class CreateSpotifyTable extends Migration
      */
     public function up()
     {
-        Schema::create('spotify', function (Blueprint $table) {
+        Schema::create(config('spotify.database_table'), function (Blueprint $table) {
             $table->string('key')->unique();
             $table->text('value');
         });
@@ -26,6 +26,6 @@ class CreateSpotifyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('spotify');
+        Schema::dropIfExists(config('spotify.database_table'));
     }
 }

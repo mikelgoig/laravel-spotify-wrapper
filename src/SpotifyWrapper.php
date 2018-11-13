@@ -1,12 +1,12 @@
 <?php
 
-namespace Mgoigfer\Spotify;
+namespace Mgoigfer\SpotifyWrapper;
 
 use Exception;
 use SpotifyWebAPI\Session;
 use SpotifyWebAPI\SpotifyWebAPI;
 
-class Spotify
+class SpotifyWrapper
 {
     /**
      * The Spotify session.

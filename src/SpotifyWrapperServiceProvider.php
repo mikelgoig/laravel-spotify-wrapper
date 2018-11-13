@@ -1,13 +1,13 @@
 <?php
 
-namespace Mgoigfer\Spotify;
+namespace Mgoigfer\SpotifyWrapper;
 
 use Illuminate\Support\ServiceProvider;
-use Mgoigfer\Spotify\Spotify;
+use Mgoigfer\SpotifyWrapper\SpotifyWrapper;
 use SpotifyWebAPI\Session;
 use SpotifyWebAPI\SpotifyWebAPI;
 
-class SpotifyServiceProvider extends ServiceProvider
+class SpotifyWrapperServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -22,7 +22,7 @@ class SpotifyServiceProvider extends ServiceProvider
             if (!class_exists('CreateSpotifyTable')) {
                 $timestamp = date('Y_m_d_His', time());
                 $this->publishes([
-                    __DIR__.'/../database/migrations/create_spotify_table.php.stub' => database_path('migrations/'.$timestamp.'_create_spotify_table.php'),
+                    __DIR__.'/../database/migrations/create_spotify_table.php' => database_path('migrations/'.$timestamp.'_create_spotify_table.php'),
                 ], 'migrations');
             }
         }
@@ -43,7 +43,7 @@ class SpotifyServiceProvider extends ServiceProvider
 
             $api = new SpotifyWebAPI();
 
-            return new Spotify($session, $api, $parameters);
+            return new SpotifyWrapper($session, $api, $parameters);
         });
     }
 }
