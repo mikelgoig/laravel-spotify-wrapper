@@ -42,7 +42,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mgoigfer\\SpotifyWrapper\\SpotifyWraperServiceProvider"
+                "Mgoigfer\\SpotifyWrapper\\SpotifyWrapperServiceProvider"
             ]
         }
     },
