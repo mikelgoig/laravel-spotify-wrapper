@@ -2,8 +2,9 @@
     "name": "mgoigfer/laravel-spotify-wrapper",
     "description": "A PHP wrapper for Spotify's Web API. ",
     "keywords": [
-        "spotify",
-        "php"
+        "laravel",
+        "php",
+        "spotify"
     ],
     "homepage": "https://github.com/mgoigfer/laravel-spotify-wrapper",
     "license": "MIT",
