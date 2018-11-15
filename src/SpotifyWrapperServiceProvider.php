@@ -41,9 +41,7 @@ class SpotifyWrapperServiceProvider extends ServiceProvider
                 array_key_exists('callback', $parameters) ? config('app.url').$parameters['callback'] : ''
             );
 
-            $api = new SpotifyWebAPI();
-
-            return new SpotifyWrapper($session, $api, $parameters);
+            return new SpotifyWrapper($session, new SpotifyWebAPI(), $parameters);
         });
     }
 }

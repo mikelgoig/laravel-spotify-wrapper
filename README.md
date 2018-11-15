@@ -5,7 +5,9 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/mgoigfer/laravel-spotify-wrapper.svg?style=flat-square)](https://scrutinizer-ci.com/g/mgoigfer/laravel-spotify-wrapper)
 [![Total Downloads](https://img.shields.io/packagist/dt/mgoigfer/laravel-spotify-wrapper.svg?style=flat-square)](https://packagist.org/packages/mgoigfer/laravel-spotify-wrapper)
 
-This is where your description should go. Try and limit it to a paragraph or two.
+This is a PHP wrapper for [jwilsson/spotify-web-api-php](https://github.com/jwilsson/spotify-web-api-php). It includes:
+
+* Authorization flow helpers.
 
 ## Installation
 
@@ -38,7 +40,6 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 ## Credits
 
 - [Mikel Goig](https://github.com/mgoigfer)
-- [All Contributors](../../contributors)
 
 ## License
 
