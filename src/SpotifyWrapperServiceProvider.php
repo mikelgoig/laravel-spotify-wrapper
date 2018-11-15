@@ -33,12 +33,12 @@ class SpotifyWrapperServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('SpotifyWrapper', function ($app, $parameters)
+        $this->app->singleton('SpotifyWrapper', function ($app, $parameters = [])
         {
             $session = new Session(
                 config('spotify.client_id'),
                 config('spotify.client_secret'),
-                config('app.url').$parameters['callback']
+                array_key_exists('callback', $parameters) ? config('app.url').$parameters['callback'] : ''
             );
 
             $api = new SpotifyWebAPI();

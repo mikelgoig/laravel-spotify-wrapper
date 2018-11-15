@@ -34,11 +34,14 @@ class SpotifyWrapper
      *
      * @return void
      */
-    public function __construct(Session $session, SpotifyWebAPI $api, $parameters)
+    public function __construct(Session $session, SpotifyWebAPI $api, $parameters = [])
     {
         $this->session = $session;
         $this->api = $api;
-        $this->options['scope'] = $parameters['scope'];
+
+        if (array_key_exists('scope', $parameters)) {
+            $this->options['scope'] = $parameters['scope'];
+        }
     }
 
     /**
@@ -67,5 +70,26 @@ class SpotifyWrapper
         } else {
             $this->redirectToSpotifyAuthorizeUrl();
         }
+    }
+
+    /**
+     * Refresh the access token.
+     *
+     * @param  string  $refresh_token
+     *
+     * @return string
+     */
+    public function refreshAccessToken($refresh_token)
+    {
+        // Refresh the access token.
+        $this->session->refreshAccessToken($refresh_token);
+        $access_token = $this->session->getAccessToken();
+
+        // Set the new access token on the API wrapper, and store it in the
+        // Laravel session.
+        $this->api->setAccessToken($access_token);
+        session()->put('spotify_access_token', $access_token);
+
+        return $access_token;
     }
 }
