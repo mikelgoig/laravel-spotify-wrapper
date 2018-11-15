@@ -14,7 +14,7 @@ This is a PHP wrapper for [jwilsson/spotify-web-api-php](https://github.com/jwil
 You can install the package via Composer:
 
 ```bash
-composer require mgoigfer/spotify-wrapper
+composer require mgoigfer/laravel-spotify-wrapper
 ```
 
 ## Usage
