@@ -25,8 +25,8 @@ class SpotifyWrapperServiceProvider extends ServiceProvider
         $this->app->singleton('SpotifyWrapper', function ($app, $parameters = [])
         {
             $session = new Session(
-                config('spotify.client_id'),
-                config('spotify.client_secret'),
+                config('services.spotify.client_id'),
+                config('services.spotify.client_secret'),
                 array_key_exists('callback', $parameters) ? config('app.url').$parameters['callback'] : ''
             );
 
