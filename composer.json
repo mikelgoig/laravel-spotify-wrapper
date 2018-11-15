@@ -4,7 +4,8 @@
     "keywords": [
         "laravel",
         "php",
-        "spotify"
+        "spotify",
+        "package"
     ],
     "homepage": "https://github.com/mgoigfer/laravel-spotify-wrapper",
     "license": "MIT",
