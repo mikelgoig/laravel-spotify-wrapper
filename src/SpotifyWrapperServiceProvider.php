@@ -14,18 +14,7 @@ class SpotifyWrapperServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__.'/../config/spotify.php' => config_path('spotify.php'),
-            ], 'config');
-
-            if (!class_exists('CreateSpotifyTable')) {
-                $timestamp = date('Y_m_d_His', time());
-                $this->publishes([
-                    __DIR__.'/../database/migrations/create_spotify_table.php' => database_path('migrations/'.$timestamp.'_create_spotify_table.php'),
-                ], 'migrations');
-            }
-        }
+        //
     }
 
     /**

@@ -11,10 +11,19 @@ This is a PHP wrapper for [jwilsson/spotify-web-api-php](https://github.com/jwil
 
 ## Installation
 
-You can install the package via [Composer](https://getcomposer.org/):
+You can install this package via [Composer](https://getcomposer.org/):
 
 ```bash
 composer require mgoigfer/laravel-spotify-wrapper
+```
+
+Add the following lines to `config/services.php`:
+
+```php
+'spotify' => [
+    'client_id' => env('SPOTIFY_CLIENT_ID'),
+    'client_secret' => env('SPOTIFY_CLIENT_SECRET'),
+],
 ```
 
 ## Usage
