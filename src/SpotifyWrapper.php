@@ -23,6 +23,7 @@ class SpotifyWrapper
      */
     private $options = [
         'scope' => [],
+        'show_dialog' => false,
     ];
 
     /**
@@ -42,6 +43,10 @@ class SpotifyWrapper
         if (array_key_exists('scope', $parameters)) {
             $this->options['scope'] = $parameters['scope'];
         }
+
+        if (array_key_exists('show_dialog', $parameters)) {
+            $this->options['show_dialog'] = $parameters['show_dialog'];
+        }
     }
 
     /**
@@ -51,6 +56,25 @@ class SpotifyWrapper
     {
         header("Location: {$this->session->getAuthorizeUrl($this->options)}");
         die();
+    }
+
+    /**
+     * Request an access token.
+     *
+     * @return void|string
+     */
+    public function requestAccessToken()
+    {
+        if (isset($_GET['code'])) {
+            try {
+                $this->session->requestAccessToken($_GET['code']);
+                return $this->session->getAccessToken();
+            } catch (Exception $e) {
+                $this->redirectToSpotifyAuthorizeUrl();
+            }
+        } else {
+            $this->redirectToSpotifyAuthorizeUrl();
+        }
     }
 
     /**

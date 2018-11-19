@@ -29,8 +29,16 @@ Add the following lines to `config/services.php`:
 ## Usage
 
 ``` php
-$spotify = new Mgoigfer\SpotifyWrapper\SpotifyWrapper();
+$spotify = app()->make('SpotifyWrapper', [
+    'callback' => '/playlist',
+]);
 ```
+
+Available options:
+
+* `callback`: _Optional_. The URI to redirect to after the user grants or denies permission. This URI needs to have been entered in the Redirect URI whitelist that you specified when you registered your application.
+* `scope`: _Optional_. A space-separated list of scopes. If no scopes are specified, authorization will be granted only to access publicly available information.
+* `show_dialog`: _Optional_. Whether or not to force the user to approve the app again if they’ve already done so. If `false` (default), a user who has already approved the application may be automatically redirected to the URI specified by redirect_uri. If `true`, the user will not be automatically redirected and will have to approve the app again.
 
 ### Testing
 
