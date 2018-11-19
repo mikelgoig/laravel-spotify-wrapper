@@ -51,6 +51,8 @@ class SpotifyWrapper
 
     /**
      * Redirect to the Spotify authorize URL.
+     *
+     * @return void
      */
     private function redirectToSpotifyAuthorizeUrl()
     {
@@ -65,14 +67,10 @@ class SpotifyWrapper
      */
     public function requestAccessToken()
     {
-        if (isset($_GET['code'])) {
-            try {
-                $this->session->requestAccessToken($_GET['code']);
-                return $this->session->getAccessToken();
-            } catch (Exception $e) {
-                $this->redirectToSpotifyAuthorizeUrl();
-            }
-        } else {
+        try {
+            $this->session->requestAccessToken($_GET['code']);
+            return $this->session->getAccessToken();
+        } catch (Exception $e) {
             $this->redirectToSpotifyAuthorizeUrl();
         }
     }
@@ -84,14 +82,10 @@ class SpotifyWrapper
      */
     public function requestRefreshToken()
     {
-        if (isset($_GET['code'])) {
-            try {
-                $this->session->requestAccessToken($_GET['code']);
-                return $this->session->getRefreshToken();
-            } catch (Exception $e) {
-                $this->redirectToSpotifyAuthorizeUrl();
-            }
-        } else {
+        try {
+            $this->session->requestAccessToken($_GET['code']);
+            return $this->session->getRefreshToken();
+        } catch (Exception $e) {
             $this->redirectToSpotifyAuthorizeUrl();
         }
     }
@@ -105,15 +99,7 @@ class SpotifyWrapper
      */
     public function refreshAccessToken($refresh_token)
     {
-        // Refresh the access token.
         $this->session->refreshAccessToken($refresh_token);
-        $access_token = $this->session->getAccessToken();
-
-        // Set the new access token on the API wrapper, and store it in the
-        // Laravel session.
-        $this->api->setAccessToken($access_token);
-        session()->put('spotify_access_token', $access_token);
-
-        return $access_token;
+        return $this->session->getAccessToken();
     }
 }
