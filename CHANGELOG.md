@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-spotify-wrapper` will be documented in this file.
 
+## 0.1.5 - 2018-11-26
+
+- Make $api and $session properties public.
+
 ## 0.1.4 - 2018-11-19
 
 - Add "Request Access Token" method.

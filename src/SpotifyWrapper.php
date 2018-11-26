@@ -11,12 +11,12 @@ class SpotifyWrapper
     /**
      * The Spotify session.
      */
-    private $session;
+    public $session;
 
     /**
      * The Spotify API.
      */
-    private $api;
+    public $api;
 
     /**
      * The Spotify options.
