@@ -63,43 +63,14 @@ class SpotifyWrapper
     /**
      * Request an access token.
      *
-     * @return void|string
+     * @return void
      */
     public function requestAccessToken()
     {
         try {
             $this->session->requestAccessToken($_GET['code']);
-            return $this->session->getAccessToken();
         } catch (Exception $e) {
             $this->redirectToSpotifyAuthorizeUrl();
         }
-    }
-
-    /**
-     * Request a refresh token.
-     *
-     * @return void|string
-     */
-    public function requestRefreshToken()
-    {
-        try {
-            $this->session->requestAccessToken($_GET['code']);
-            return $this->session->getRefreshToken();
-        } catch (Exception $e) {
-            $this->redirectToSpotifyAuthorizeUrl();
-        }
-    }
-
-    /**
-     * Refresh the access token.
-     *
-     * @param  string  $refresh_token
-     *
-     * @return string
-     */
-    public function refreshAccessToken($refresh_token)
-    {
-        $this->session->refreshAccessToken($refresh_token);
-        return $this->session->getAccessToken();
     }
 }

@@ -40,19 +40,23 @@ Available options:
 * `scope`: _Optional_. A space-separated list of scopes. If no scopes are specified, authorization will be granted only to access publicly available information.
 * `show_dialog`: _Optional_. Whether or not to force the user to approve the app again if they’ve already done so. If `false` (default), a user who has already approved the application may be automatically redirected to the URI specified by redirect_uri. If `true`, the user will not be automatically redirected and will have to approve the app again.
 
-## Testing
+### Method Reference
 
-``` bash
-composer test
+These are the available methods:
+
+#### requestAccessToken
+
+```php
+SpotifyWrapper\SpotifyWrapper::requestAccessToken()
 ```
+
+Request an access token.
+
+First of all, the user will be redirected to Spotify to approve the app. Then, the user is redirected back with an authorization code, in which we request an access token.
 
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
