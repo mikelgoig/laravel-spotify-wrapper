@@ -69,6 +69,7 @@ class SpotifyWrapper
     {
         try {
             $this->session->requestAccessToken($_GET['code']);
+            return $this;
         } catch (Exception $e) {
             $this->redirectToSpotifyAuthorizeUrl();
         }

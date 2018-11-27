@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-spotify-wrapper` will be documented in this file.
 
+## 0.2.1 - 2018-11-27
+
+- Fix some issues.
+
 ## 0.2.0 - 2018-11-27
 
 - Refactor methods.
